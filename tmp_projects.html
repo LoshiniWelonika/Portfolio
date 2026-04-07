@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@300..700&amp;family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#0e0e13",
+            "outline-variant": "#48474d",
+            "on-tertiary-fixed-variant": "#665500",
+            "on-primary-fixed": "#002c37",
+            "primary-dim": "#00c3eb",
+            "background": "#0e0e13",
+            "error": "#ff716c",
+            "surface-variant": "#25252d",
+            "on-tertiary": "#655400",
+            "tertiary-fixed": "#ffd709",
+            "primary-fixed-dim": "#00c3eb",
+            "surface-container-high": "#1f1f26",
+            "surface-container-lowest": "#000000",
+            "error-container": "#9f0519",
+            "primary": "#6dddff",
+            "tertiary": "#ffe792",
+            "on-primary-fixed-variant": "#004c5d",
+            "tertiary-dim": "#efc900",
+            "surface-tint": "#6dddff",
+            "primary-container": "#00d2fd",
+            "on-background": "#f9f5fd",
+            "surface": "#0e0e13",
+            "secondary": "#dd8bfb",
+            "surface-container-low": "#131319",
+            "outline": "#76747b",
+            "surface-bright": "#2c2b33",
+            "on-secondary": "#4c0068",
+            "on-secondary-fixed-variant": "#792c97",
+            "surface-container": "#19191f",
+            "surface-container-highest": "#25252d",
+            "inverse-surface": "#fcf8ff",
+            "secondary-fixed": "#f2c1ff",
+            "secondary-dim": "#ce7eec",
+            "on-secondary-fixed": "#580078",
+            "on-secondary-container": "#f1bfff",
+            "secondary-container": "#6e208c",
+            "on-surface-variant": "#acaab1",
+            "on-primary": "#004c5e",
+            "inverse-on-surface": "#55545b",
+            "tertiary-fixed-dim": "#efc900",
+            "on-primary-container": "#004352",
+            "on-surface": "#f9f5fd",
+            "on-error": "#490006",
+            "inverse-primary": "#00687e",
+            "on-tertiary-container": "#5b4b00",
+            "error-dim": "#d7383b",
+            "secondary-fixed-dim": "#ebadff",
+            "on-tertiary-fixed": "#453900",
+            "on-error-container": "#ffa8a3",
+            "tertiary-container": "#ffd709",
+            "primary-fixed": "#00d2fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(37, 37, 45, 0.4);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(72, 71, 77, 0.3);
+    }
+    .ghost-border {
+      border: 1px solid rgba(72, 71, 77, 0.15);
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(circle at 2px 2px, rgba(109, 221, 255, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl rounded-full border border-slate-700/30 bg-slate-900/40 backdrop-blur-xl flex justify-between items-center px-8 py-3 z-50 shadow-[0_0_48px_rgba(109,221,255,0.08)]">
+<div class="text-xl font-black tracking-tighter text-sky-400 font-headline">ETH_ENGINEER</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-headline font-bold tracking-tight" href="#">Home</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-headline font-bold tracking-tight" href="#">Skills</a>
+<a class="text-sky-400 font-bold border-b border-sky-400/50 pb-1 font-headline tracking-tight" href="#">Projects</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-headline font-bold tracking-tight" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-sky-400 hover:bg-slate-800/50 hover:scale-[1.02] transition-all p-2 rounded-full">terminal</button>
+<button class="material-symbols-outlined text-sky-400 hover:bg-slate-800/50 hover:scale-[1.02] transition-all p-2 rounded-full">code</button>
+</div>
+</nav>
+<main class="relative min-h-screen pt-32 pb-24 overflow-hidden">
+<!-- Atmospheric Background Elements -->
+<div class="absolute inset-0 bg-grid-pattern -z-10"></div>
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full -z-10"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[120px] rounded-full -z-10"></div>
+<!-- Page Header -->
+<section class="max-w-7xl mx-auto px-6 mb-20 text-center">
+<span class="label-md uppercase tracking-[0.2em] text-primary font-label font-bold mb-4 block">Archive 2024</span>
+<h1 class="text-6xl md:text-7xl font-black font-headline tracking-tighter mb-6 bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">
+        ENGINEERING<br/>INTUITION.
+      </h1>
+<p class="max-w-2xl mx-auto text-on-surface-variant text-lg leading-relaxed">
+        A curated selection of technical experiments, full-stack architectures, and ethereal interface designs. Each project represents a bridge between complex logic and seamless interaction.
+      </p>
+</section>
+<!-- Projects Grid (Asymmetric Layout) -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- Project 1: Featured (Large) -->
+<div class="md:col-span-8 group">
+<div class="glass-card rounded-lg overflow-hidden transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_0_64px_rgba(109,221,255,0.12)]">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Sentinel Protocol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="high-tech cyber security dashboard with neon blue data visualizations and holographic network interfaces in dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHFsv1LMyU6nX68Y368-K86IdI_vk10-jtbsekzVEV8PufEqdcHjgzudsrXHnGbR4Uylsuf-az66jIwSbubEKFn07bLYI5tmB62LrbjcUDdHSLJH4zRWeZ_oUbwMQRWIM1IIVY64hud-o2XwdOi-NTPBBxCAoi0eP8pSalnuWS93QXf4zks2Ib1J-fVhvgc-kQkrhG7hmogoRSn81dalpwtmkEykBbfu3mCBzNctFi31lS9V-ECWZiyKfFlbZbvnYMAJSvzwe0Uzau"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-8 lg:p-12">
+<div class="flex flex-wrap gap-3 mb-6">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold tracking-wider uppercase">Next.js</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold tracking-wider uppercase">Rust</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold tracking-wider uppercase">WebAssembly</span>
+</div>
+<h3 class="text-4xl font-black font-headline tracking-tight mb-4">SENTINEL PROTOCOL</h3>
+<p class="text-on-surface-variant text-lg mb-8 max-w-xl">
+                A distributed real-time intrusion detection system designed for Ethereum node operators. Leveraging Rust for core computation and Next.js for the ethereal visualization layer.
+              </p>
+<div class="flex gap-4">
+<a class="px-8 py-3 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-full hover:shadow-[0_0_16px_#6dddffaa] transition-all flex items-center gap-2" href="#">
+                  Live Demo <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="px-8 py-3 surface-variant bg-opacity-40 ghost-border rounded-full hover:bg-surface-variant/60 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-lg">code</span> View Source
+                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: Side Column -->
+<div class="md:col-span-4 group h-full">
+<div class="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_64px_rgba(221,139,251,0.1)]">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Prism DEX" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="abstract 3D glass sculpture reflecting purple and blue light with refractive patterns and sharp geometric edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhHzmC6g-efeW9hM3PiqeP9CnnoHvCDNowibvQbC-DkmkITZNnhRaUI9wigZY0xz_VX8GTIcOG7R-AIJcGt7_DxahHlwDNfVCQ5VNox14suwno7h817iNIFh1vSwU_mq7q_xXGWV3ZaMlJQTjIk9GwH2aAR7_hBdVPJfRRwoYwkKVsZuLv7meCOoENxe6C1xPID3hhF2Ws19WsmsFMiClMv2qENt1g0fE6AiV5lsR0de3EbooUd5S_cFZasPj0vFWbO36bffbgFI3f"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold tracking-wider uppercase">Solidity</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold tracking-wider uppercase">Viem</span>
+</div>
+<h3 class="text-2xl font-black font-headline tracking-tight mb-3 uppercase">PRISM DEX</h3>
+<p class="text-on-surface-variant text-sm mb-8">
+                The next-gen AMM with concentrated liquidity and refractive trade routing for minimal slippage.
+              </p>
+<div class="mt-auto flex gap-3">
+<a class="flex-1 py-2 ghost-border text-center rounded-full text-sm font-bold hover:bg-white/5 transition-all" href="#">GitHub</a>
+<a class="flex-1 py-2 bg-secondary text-on-secondary text-center rounded-full text-sm font-bold hover:brightness-110 transition-all" href="#">Launch</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 3: Wide Card -->
+<div class="md:col-span-5 group">
+<div class="glass-card rounded-lg overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_64px_rgba(109,221,255,0.08)]">
+<div class="aspect-[4/3] relative overflow-hidden">
+<img alt="Aether Bridge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="deep space satellite view of earth with glowing blue digital data links and global connectivity web" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBju31Z5LcuU7XcOEhlfa9Qp2ai3ejcB998ox7fgaj0yK2lHXUas6sPr2RbGUldR798u10ETu_xhzRL9cI1wwlGCXErYEuPVuCjvFmuVDIiGC6pwj9EZqSbP33Yb_kdlnDgrje9Gp7GVoYV0mE3dV_7xL_Vu9RLbdxpZWRCGVIjxKjKTLjyfw9zO-sL8iEyaZreSqo3m1DOcRljJo-ldzxMlsUbbFrKwqSrBX-vLF6h4pLniD5_Jf9Dt2cJ03R5A03e1p0Pg3MOsObL"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Go</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">gRPC</span>
+</div>
+<h3 class="text-2xl font-black font-headline tracking-tight mb-3">AETHER BRIDGE</h3>
+<p class="text-on-surface-variant text-sm mb-6">
+                Cross-chain messaging protocol utilizing zero-knowledge proofs for trustless state transfer between L2s.
+              </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold group/link" href="#">
+                Review Documentation <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 4: Modern Technical Stack -->
+<div class="md:col-span-7 group">
+<div class="glass-card rounded-lg overflow-hidden flex flex-col md:flex-row transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_0_64px_rgba(255,231,146,0.08)]">
+<div class="md:w-1/2 aspect-square md:aspect-auto overflow-hidden">
+<img alt="Fractal Engine" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="abstract black and gold mathematical fractal pattern with depth and intricate digital geometry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb2Tcc4wxmSYV2E7p6Oykf5V-Kl-FQ-KCnLyzMU9ZpG0K0fxaT2iQhZKo9j5AG0BtmmgFQRIqFdyaalIJZfT_fyPy9qu-XgqsgoHiT-6dl89UtYXvtuVf-SvnUDiwQKbN88PHiHToVgFMLar6Mm43X0a7JoRPB-v3t-MLuws4GsijQDChSuoTE_54Eho1ALNTlmHLdoavYCaEHO3bRzbtG5HrOE4_VyK0Zd4-LTQTAvIlr99HBTFhkexaEXjmsbvXw_-Us1-rc69HS"/>
+</div>
+<div class="md:w-1/2 p-8 lg:p-10 flex flex-col justify-center">
+<span class="text-tertiary font-label text-xs font-black tracking-widest mb-2 uppercase">Core Infrastructure</span>
+<h3 class="text-3xl font-black font-headline tracking-tight mb-4">FRACTAL ENGINE</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                A high-performance rendering engine built on WebGPU, capable of processing recursive mathematical structures in real-time within the browser environment.
+              </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-2 py-1 ghost-border rounded text-[10px] uppercase font-bold text-outline">TypeScript</span>
+<span class="px-2 py-1 ghost-border rounded text-[10px] uppercase font-bold text-outline">WebGPU</span>
+<span class="px-2 py-1 ghost-border rounded text-[10px] uppercase font-bold text-outline">GLSL</span>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined p-3 rounded-full ghost-border text-tertiary hover:bg-tertiary/10 transition-all">terminal</button>
+<button class="material-symbols-outlined p-3 rounded-full ghost-border text-tertiary hover:bg-tertiary/10 transition-all">code</button>
+<button class="flex-1 py-3 bg-tertiary text-on-tertiary font-bold rounded-full text-center hover:shadow-[0_0_20px_rgba(255,231,146,0.3)] transition-all">Explore Tech</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full border-t border-slate-800/40 bg-slate-950/60 flex flex-col md:flex-row justify-between items-center px-12 py-12 gap-6">
+<div class="font-inter text-sm uppercase tracking-widest text-slate-500">© 2024 THE ETHEREAL ENGINEER. BUILT WITH PRECISION.</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-sky-300 transition-colors font-inter text-sm uppercase tracking-widest opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-sky-300 transition-colors font-inter text-sm uppercase tracking-widest opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-sky-300 transition-colors font-inter text-sm uppercase tracking-widest opacity-80 hover:opacity-100" href="#">Source</a>
+</div>
+</footer>
+</body></html>
