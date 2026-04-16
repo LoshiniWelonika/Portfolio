@@ -1,3 +1,5 @@
+import donationImg from '../assets/bloodDonation.png';
+
 export default function Projects() {
   return (
     <section id="projects" className="relative pt-24 pb-24 overflow-hidden">
@@ -21,21 +23,24 @@ export default function Projects() {
           <div className="group h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(109,221,255,0.12)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
-                <img alt="Sentinel Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHFsv1LMyU6nX68Y368-K86IdI_vk10-jtbsekzVEV8PufEqdcHjgzudsrXHnGbR4Uylsuf-az66jIwSbubEKFn07bLYI5tmB62LrbjcUDdHSLJH4zRWeZ_oUbwMQRWIM1IIVY64hud-o2XwdOi-NTPBBxCAoi0eP8pSalnuWS93QXf4zks2Ib1J-fVhvgc-kQkrhG7hmogoRSn81dalpwtmkEykBbfu3mCBzNctFi31lS9V-ECWZiyKfFlbZbvnYMAJSvzwe0Uzau" />
+                <img alt="Sentinel Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={donationImg} />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent opacity-60"></div>
               </div>
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Next.js</span>
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Rust</span>
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">WASM</span>
+                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">React</span>
+                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">Rust</span>
+                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">WASM</span>
                 </div>
-                <h3 className="text-2xl font-black font-headline tracking-tight mb-3 uppercase">SENTINEL PROTOCOL</h3>
+                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
+                  <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
+                </div>
+                <h3 className="text-2xl font-black font-headline tracking-tight mb-3 uppercase">Blood Donation & Management System</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
-                  A distributed real-time intrusion detection system designed for Ethereum node operators. Leveraging Rust for core computation and Next.js for the ethereal visualization layer.
+                  A web application built to streamline blood requests, donor registration, and awareness to save lives faster and more efficiently.
                 </p>
-                <a href="#" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
-                  Live Demo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-bold group/link relative z-10 transition-colors">
+                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -52,12 +57,15 @@ export default function Projects() {
                   <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">Solidity</span>
                   <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">Viem</span>
                 </div>
+                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
+                  <span className="material-symbols-outlined text-[14px]">group</span> Group Project
+                </div>
                 <h3 className="text-2xl font-black font-headline tracking-tight mb-3 uppercase">PRISM DEX</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
                   The next-gen AMM with concentrated liquidity and refractive trade routing for minimal slippage.
                 </p>
-                <a href="#" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
-                  Launch App <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
+                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -74,12 +82,15 @@ export default function Projects() {
                   <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Go</span>
                   <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">gRPC</span>
                 </div>
+                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
+                  <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
+                </div>
                 <h3 className="text-2xl font-black font-headline tracking-tight mb-3">AETHER BRIDGE</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
                   Cross-chain messaging protocol utilizing zero-knowledge proofs for trustless state transfer between L2s.
                 </p>
-                <a href="#" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
-                  Review Documentation <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
+                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -97,12 +108,15 @@ export default function Projects() {
                   <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">WebGPU</span>
                   <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">GLSL</span>
                 </div>
+                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
+                  <span className="material-symbols-outlined text-[14px]">group</span> Group Project
+                </div>
                 <h3 className="text-2xl font-black font-headline tracking-tight mb-3">FRACTAL ENGINE</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
                   A high-performance rendering engine built on WebGPU, capable of processing recursive mathematical structures in real-time within the browser environment.
                 </p>
-                <a href="#" className="mt-auto inline-flex items-center gap-2 text-tertiary font-bold group/link relative z-10 transition-colors">
-                  Explore Tech <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-tertiary font-bold group/link relative z-10 transition-colors">
+                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -119,12 +133,15 @@ export default function Projects() {
                   <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">React</span>
                   <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">Node.js</span>
                 </div>
+                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
+                  <span className="material-symbols-outlined text-[14px]">group</span> Group Project
+                </div>
                 <h3 className="text-2xl font-black font-headline tracking-tight mb-3">NOVA PROTOCOL</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
                   Decentralized identity verification built on StarkNet. A zero-knowledge approach to seamless, privacy-preserving authentication.
                 </p>
-                <a href="#" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
-                  View Case Study <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
+                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -141,12 +158,15 @@ export default function Projects() {
                   <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Python</span>
                   <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Pandas</span>
                 </div>
+                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
+                  <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
+                </div>
                 <h3 className="text-2xl font-black font-headline tracking-tight mb-3">QUANTUM YIELD</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
                   Algorithmic trading strategy analysis platform, leveraging historical on-chain data and generative modeling.
                 </p>
-                <a href="#" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
-                  View Data <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
+                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
