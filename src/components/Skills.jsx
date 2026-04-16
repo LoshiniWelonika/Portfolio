@@ -1,7 +1,8 @@
 import {
    SiJavascript, SiPython, SiReact, SiNodedotjs, SiExpress,
    SiGit, SiDocker, SiMongodb, SiFigma, SiTailwindcss,
-   SiMysql, SiGithub, SiPostman
+   SiMysql, SiGithub, SiPostman, SiHtml5, SiNextdotjs,
+   SiFlask, SiSpringboot
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
@@ -22,7 +23,9 @@ export default function Skills() {
          icon: "desktop_windows",
          color: "text-secondary",
          items: [
+            { name: "HTML", icon: <SiHtml5 />, color: "#E34F26" },
             { name: "React", icon: <SiReact />, color: "#61DAFB" },
+            { name: "Next.js", icon: <SiNextdotjs />, color: "#ffffff" },
             { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
          ]
       },
@@ -32,6 +35,8 @@ export default function Skills() {
          color: "text-tertiary",
          items: [
             { name: "Node.js", icon: <SiNodedotjs />, color: "#339933" },
+            { name: "Flask", icon: <SiFlask />, color: "#ffffff" },
+            { name: "Spring Boot", icon: <SiSpringboot />, color: "#6DB33F" },
             { name: "Express", icon: <SiExpress />, color: "#ffffff" },
          ]
       },
@@ -68,14 +73,14 @@ export default function Skills() {
 
    return (
       <section id="skills" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto w-full">
-         <div className="space-y-6 mb-16 relative">
-            <span className="font-label text-outline uppercase tracking-[0.2em] text-sm font-semibold">Technical Proficiency</span>
+         <div className="space-y-6 mb-16 relative flex flex-col items-center text-center">
+            <span className="font-label text-outline uppercase tracking-[0.2em] text-sm font-semibold">Technical Skills</span>
             <h2 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
-               <span className="text-on-surface block">Forging Digital</span>
-               <span className="text-primary block">Architectures.</span>
+               <span className="text-on-surface block">LEARNING. BUILDING</span>
+               <span className="text-primary block">EVOLVING.</span>
             </h2>
-            <p className="text-on-surface-variant/90 text-lg max-w-2xl leading-[1.8] font-body">
-               A curated selection of core technologies mastered through rigorous development, architectural design, and high-performance engineering.
+            <p className="text-on-surface-variant/90 text-lg max-w-2xl mx-auto leading-[1.8] font-body">
+               A practical blend of technologies explored through development, collaboration, and continuous improvement.
             </p>
 
             {/* Subtle compass icon on the right */}
