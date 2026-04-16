@@ -1,11 +1,71 @@
 import {
-   SiJavascript, SiPython, SiReact, SiNodedotjs, SiExpress, SiFlask, SiSpringboot,
-   SiGit, SiDocker, SiMongodb, SiTerraform, SiJenkins, SiKubernetes, SiGraphql,
-   SiRedis, SiFigma
+   SiJavascript, SiPython, SiReact, SiNodedotjs, SiExpress,
+   SiGit, SiDocker, SiMongodb, SiFigma, SiTailwindcss,
+   SiMysql, SiGithub, SiPostman
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
 export default function Skills() {
+   const skillCategories = [
+      {
+         title: "Programming",
+         icon: "terminal",
+         color: "text-primary",
+         items: [
+            { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
+            { name: "Python", icon: <SiPython />, color: "#3776AB" },
+            { name: "Java", icon: <FaJava />, color: "#ff716c" },
+         ]
+      },
+      {
+         title: "Frontend",
+         icon: "desktop_windows",
+         color: "text-secondary",
+         items: [
+            { name: "React", icon: <SiReact />, color: "#61DAFB" },
+            { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
+         ]
+      },
+      {
+         title: "Backend",
+         icon: "dns",
+         color: "text-tertiary",
+         items: [
+            { name: "Node.js", icon: <SiNodedotjs />, color: "#339933" },
+            { name: "Express", icon: <SiExpress />, color: "#ffffff" },
+         ]
+      },
+      {
+         title: "Database",
+         icon: "database",
+         color: "text-primary",
+         items: [
+            { name: "MongoDB", icon: <SiMongodb />, color: "#4db33d" },
+            { name: "MySQL", icon: <SiMysql />, color: "#4479A1" },
+         ]
+      },
+      {
+         title: "Tools",
+         icon: "handyman",
+         color: "text-secondary",
+         items: [
+            { name: "Git", icon: <SiGit />, color: "#f14e32" },
+            { name: "GitHub", icon: <SiGithub />, color: "#ffffff" },
+            { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
+         ]
+      },
+      {
+         title: "Other",
+         icon: "extension",
+         color: "text-tertiary",
+         items: [
+            { name: "REST APIs", color: "#e10098" },
+            { name: "Figma", icon: <SiFigma />, color: "#f24e1e" },
+            { name: "Docker (basic)", icon: <SiDocker />, color: "#2496ed" },
+         ]
+      }
+   ];
+
    return (
       <section id="skills" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto w-full">
          <div className="space-y-6 mb-16 relative">
@@ -24,111 +84,30 @@ export default function Skills() {
             </div>
          </div>
 
-         <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 mb-6">
-            {/* Programming Skills */}
-            <div className="col-span-1 lg:col-span-4 glass-card p-10 rounded-[40px] flex flex-col gap-8 shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#17171e]/60 border border-outline-variant/10">
-               <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>devices</span>
-                  <h3 className="text-2xl font-headline font-semibold text-on-surface">Programming Skills</h3>
-               </div>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {skillCategories.map((category, idx) => (
+               <div key={idx} className="glass-card p-10 rounded-[40px] flex flex-col gap-8 shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#17171e]/60 border border-outline-variant/10 hover:bg-[#1a1a24]/80 transition-colors">
+                  <div className="flex items-center gap-3">
+                     <span className={`material-symbols-outlined text-2xl ${category.color}`} style={{ fontVariationSettings: "'FILL' 1" }}>{category.icon}</span>
+                     <h3 className="text-2xl font-headline font-semibold text-on-surface">{category.title}</h3>
+                  </div>
 
-               <div className="flex flex-col gap-6 mt-2">
-                  <div className="flex items-center gap-5">
-                     <div className="w-10 h-10 rounded-lg bg-[#F7DF1E]/10 flex items-center justify-center text-[#F7DF1E] border border-[#F7DF1E]/20">
-                        <SiJavascript className="text-xl" />
-                     </div>
-                     <span className="text-on-surface-variant text-lg font-medium font-body">JavaScript (ES8+)</span>
-                  </div>
-                  <div className="flex items-center gap-5">
-                     <div className="w-10 h-10 rounded-lg bg-[#3776AB]/10 flex items-center justify-center text-[#3776AB] border border-[#3776AB]/20">
-                        <SiPython className="text-xl" />
-                     </div>
-                     <span className="text-on-surface-variant text-lg font-medium font-body">Python</span>
-                  </div>
-                  <div className="flex items-center gap-5">
-                     <div className="w-10 h-10 rounded-lg bg-[#ff716c]/10 flex items-center justify-center text-[#ff716c] border border-[#ff716c]/20">
-                        <FaJava className="text-2xl" />
-                     </div>
-                     <span className="text-on-surface-variant text-lg font-medium font-body">Java</span>
+                  <div className="flex flex-wrap gap-4 mt-2">
+                     {category.items.map((item, itemIdx) => (
+                        <div key={itemIdx} className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-full px-5 py-3 flex items-center gap-3 hover:bg-[#252530] transition-colors cursor-default">
+                           {item.icon && (
+                              <span className="text-[18px] flex items-center justify-center" style={{ color: item.color }}>
+                                 {item.icon}
+                              </span>
+                           )}
+                           <span className="text-on-surface-variant text-[15px] font-medium font-body tracking-wide">
+                              {item.name}
+                           </span>
+                        </div>
+                     ))}
                   </div>
                </div>
-            </div>
-
-            {/* Frameworks */}
-            <div className="col-span-1 lg:col-span-6 glass-card p-10 rounded-[40px] flex flex-col gap-8 shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#17171e]/60 border border-outline-variant/10">
-               <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>view_in_ar</span>
-                  <h3 className="text-2xl font-headline font-semibold text-on-surface">Frameworks</h3>
-               </div>
-
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-2">
-                  <div className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-[24px] p-5 flex items-center gap-4 hover:bg-[#252530] transition-colors cursor-default shadow-inner relative overflow-hidden">
-                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#61DAFB]/5 rounded-full blur-[30px] pointer-events-none"></div>
-                     <div className="w-12 h-12 flex items-center justify-center text-[#61DAFB] bg-[#61DAFB]/10 rounded-full relative z-10 shrink-0">
-                        <SiReact className="text-3xl" />
-                     </div>
-                     <span className="text-on-surface-variant font-medium text-[17px] font-body relative z-10">React</span>
-                  </div>
-
-                  <div className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-[24px] p-5 flex items-center gap-4 hover:bg-[#252530] transition-colors cursor-default shadow-inner relative overflow-hidden">
-                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#339933]/5 rounded-full blur-[30px] pointer-events-none"></div>
-                     <div className="w-12 h-12 flex items-center justify-center text-[#339933] bg-[#339933]/10 rounded-full relative z-10 shrink-0">
-                        <SiNodedotjs className="text-3xl" />
-                     </div>
-                     <span className="text-on-surface-variant font-medium text-[17px] font-body relative z-10">Node.js</span>
-                  </div>
-               </div>
-
-               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-auto">
-                  <div className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-[20px] p-4 flex items-center gap-3 hover:bg-[#252530] transition-colors cursor-default">
-                     <div className="w-10 h-10 flex items-center justify-center text-on-surface bg-surface-variant rounded-full shrink-0">
-                        <SiExpress className="text-xl" />
-                     </div>
-                     <span className="text-on-surface-variant font-medium text-[15px] font-body truncate">Express</span>
-                  </div>
-
-                  <div className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-[20px] p-4 flex items-center gap-3 hover:bg-[#252530] transition-colors cursor-default">
-                     <div className="w-10 h-10 flex items-center justify-center text-on-surface bg-surface-variant rounded-full shrink-0">
-                        <SiFlask className="text-xl" />
-                     </div>
-                     <span className="text-on-surface-variant font-medium text-[15px] font-body truncate">Flask</span>
-                  </div>
-
-                  <div className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-[20px] p-4 flex items-center gap-3 hover:bg-[#252530] transition-colors cursor-default">
-                     <div className="w-10 h-10 flex items-center justify-center text-[#6DB33F] bg-[#6DB33F]/10 rounded-full shrink-0">
-                        <SiSpringboot className="text-xl" />
-                     </div>
-                     <span className="text-on-surface-variant font-medium text-[15px] font-body truncate">Spring Boot</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         {/* Tools Section */}
-         <div className="glass-card p-10 rounded-[40px] mb-8 flex flex-col gap-8 shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#17171e]/60 border border-outline-variant/10">
-            <div className="flex items-center gap-3">
-               <span className="material-symbols-outlined text-tertiary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>handyman</span>
-               <h3 className="text-2xl font-headline font-semibold text-on-surface">Tools</h3>
-            </div>
-
-            <div className="flex flex-wrap gap-4 mt-2">
-               {[
-                  { name: "Git", icon: <SiGit />, color: "#f14e32" },
-                  { name: "Docker", icon: <SiDocker />, color: "#2496ed" },
-                  { name: "MongoDB", icon: <SiMongodb />, color: "#4db33d" },
-                  { name: "Terraform", icon: <SiTerraform />, color: "#5c4ee5" },
-                  { name: "Jenkins", icon: <SiJenkins />, color: "#d24939" },
-                  { name: "Kubernetes", icon: <SiKubernetes />, color: "#326ce5" },
-                  { name: "GraphQL", icon: <SiGraphql />, color: "#e10098" },
-                  { name: "Redis", icon: <SiRedis />, color: "#dc382d" },
-                  { name: "Figma", icon: <SiFigma />, color: "#f24e1e" },
-               ].map((tool, idx) => (
-                  <div key={idx} className="bg-[#1c1c24]/80 border border-outline-variant/10 rounded-full px-5 py-3 flex items-center gap-3 hover:bg-[#252530] transition-colors cursor-default">
-                     <span className="text-[18px] flex items-center justify-center" style={{ color: tool.color }}>{tool.icon}</span>
-                     <span className="text-on-surface-variant text-[15px] font-medium font-body tracking-wide">{tool.name}</span>
-                  </div>
-               ))}
-            </div>
+            ))}
          </div>
 
          {/* Quote Banner */}
