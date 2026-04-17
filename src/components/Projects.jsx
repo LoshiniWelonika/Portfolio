@@ -1,4 +1,8 @@
 import donationImg from '../assets/bloodDonation.png';
+import parkingImg from '../assets/parkingSys.png';
+import truthlabImg from '../assets/truthlab.png';
+import bookSearchImg from '../assets/bookSearch.jpg';
+import movieAppImg from '../assets/movie.png';
 
 export default function Projects() {
   return (
@@ -17,10 +21,10 @@ export default function Projects() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-12 items-stretch">
 
           {/* Project 1 */}
-          <div className="group h-full">
+          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(109,221,255,0.12)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                 <img alt="Sentinel Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={donationImg} />
@@ -29,8 +33,8 @@ export default function Projects() {
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">React</span>
-                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">Rust</span>
-                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">WASM</span>
+                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">Flask</span>
+                  <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-label font-bold uppercase">SQLite</span>
                 </div>
                 <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
                   <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
@@ -39,7 +43,7 @@ export default function Projects() {
                 <p className="text-on-surface-variant text-sm mb-6">
                   A web application built to streamline blood requests, donor registration, and awareness to save lives faster and more efficiently.
                 </p>
-                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-bold group/link relative z-10 transition-colors">
+                <a href="https://github.com/LoshiniWelonika/Blood-Donation-Site" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-bold group/link relative z-10 transition-colors">
                   Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
@@ -47,24 +51,24 @@ export default function Projects() {
           </div>
 
           {/* Project 2 */}
-          <div className="group h-full">
-            <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(221,139,251,0.1)]">
+          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
+            <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(96,165,250,0.12)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
-                <img alt="Prism DEX" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhHzmC6g-efeW9hM3PiqeP9CnnoHvCDNowibvQbC-DkmkITZNnhRaUI9wigZY0xz_VX8GTIcOG7R-AIJcGt7_DxahHlwDNfVCQ5VNox14suwno7h817iNIFh1vSwU_mq7q_xXGWV3ZaMlJQTjIk9GwH2aAR7_hBdVPJfRRwoYwkKVsZuLv7meCOoENxe6C1xPID3hhF2Ws19WsmsFMiClMv2qENt1g0fE6AiV5lsR0de3EbooUd5S_cFZasPj0vFWbO36bffbgFI3f" />
+                <img alt="Prism DEX" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={parkingImg} />
               </div>
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">Solidity</span>
-                  <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">Viem</span>
+                  <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-label font-bold uppercase">HTML</span>
+                  <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-label font-bold uppercase">Node.js</span>
+                  <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-label font-bold uppercase">MongoDB</span>
                 </div>
                 <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
                   <span className="material-symbols-outlined text-[14px]">group</span> Group Project
                 </div>
-                <h3 className="text-2xl font-black font-headline tracking-tight mb-3 uppercase">PRISM DEX</h3>
+                <h3 className="text-2xl font-black font-headline tracking-tight mb-3 uppercase">PARKING MANAGEMENT SYSTEM</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
-                  The next-gen AMM with concentrated liquidity and refractive trade routing for minimal slippage.
-                </p>
-                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
+                  A smart parking management system that automates space allocation, permits, and monitoring to make parking easier, faster, and more efficient.                </p>
+                <a href="https://github.com/SE4106-Project-Group-11/Parking-Management-System" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-bold group/link relative z-10 transition-colors">
                   Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
@@ -72,24 +76,25 @@ export default function Projects() {
           </div>
 
           {/* Project 3 */}
-          <div className="group h-full">
+          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(109,221,255,0.08)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
-                <img alt="Aether Bridge" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBju31Z5LcuU7XcOEhlfa9Qp2ai3ejcB998ox7fgaj0yK2lHXUas6sPr2RbGUldR798u10ETu_xhzRL9cI1wwlGCXErYEuPVuCjvFmuVDIiGC6pwj9EZqSbP33Yb_kdlnDgrje9Gp7GVoYV0mE3dV_7xL_Vu9RLbdxpZWRCGVIjxKjKTLjyfw9zO-sL8iEyaZreSqo3m1DOcRljJo-ldzxMlsUbbFrKwqSrBX-vLF6h4pLniD5_Jf9Dt2cJ03R5A03e1p0Pg3MOsObL" />
+                <img alt="Aether Bridge" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={truthlabImg} />
               </div>
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Go</span>
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">gRPC</span>
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">REACT</span>
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">FLASK</span>
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">PYTHON</span>
                 </div>
                 <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
-                  <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
+                  <span className="material-symbols-outlined text-[14px]">group</span> Group Project
                 </div>
-                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">AETHER BRIDGE</h3>
+                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">AI FAKE NEWS DETECTOR</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
-                  Cross-chain messaging protocol utilizing zero-knowledge proofs for trustless state transfer between L2s.
+                  TRUTHLAB is an AI-powered system that detects fake news in real time by analyzing content and verifying credibility using NLP and machine learning.
                 </p>
-                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
+                <a href="https://github.com/SE5104-Mini-Project-Group-08/TruthLab" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
                   Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
@@ -97,25 +102,23 @@ export default function Projects() {
           </div>
 
           {/* Project 4 */}
-          <div className="group h-full">
+          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,231,146,0.08)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
-                <img alt="Fractal Engine" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb2Tcc4wxmSYV2E7p6Oykf5V-Kl-FQ-KCnLyzMU9ZpG0K0fxaT2iQhZKo9j5AG0BtmmgFQRIqFdyaalIJZfT_fyPy9qu-XgqsgoHiT-6dl89UtYXvtuVf-SvnUDiwQKbN88PHiHToVgFMLar6Mm43X0a7JoRPB-v3t-MLuws4GsijQDChSuoTE_54Eho1ALNTlmHLdoavYCaEHO3bRzbtG5HrOE4_VyK0Zd4-LTQTAvIlr99HBTFhkexaEXjmsbvXw_-Us1-rc69HS" />
+                <img alt="Fractal Engine" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={bookSearchImg} />
               </div>
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">TypeScript</span>
-                  <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">WebGPU</span>
-                  <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">GLSL</span>
+                  <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">REACT</span>
+                  <span className="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-label font-bold uppercase">GOOGLE BOOKS API</span>
                 </div>
                 <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
-                  <span className="material-symbols-outlined text-[14px]">group</span> Group Project
+                  <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
                 </div>
-                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">FRACTAL ENGINE</h3>
+                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">BOOK SEARCHING WEB TOOL</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
-                  A high-performance rendering engine built on WebGPU, capable of processing recursive mathematical structures in real-time within the browser environment.
-                </p>
-                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-tertiary font-bold group/link relative z-10 transition-colors">
+                  This tool allows users to explore, search, and discover books with ease. It’s fast, responsive, and designed to make book discovery more intuitive for readers and researchers alike.                </p>
+                <a href="https://github.com/LoshiniWelonika/Book-Search-Tool" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-tertiary font-bold group/link relative z-10 transition-colors">
                   Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
@@ -123,55 +126,29 @@ export default function Projects() {
           </div>
 
           {/* Project 5 */}
-          <div className="group h-full">
+          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(221,139,251,0.08)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
-                <img alt="Nova Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhHzmC6g-efeW9hM3PiqeP9CnnoHvCDNowibvQbC-DkmkITZNnhRaUI9wigZY0xz_VX8GTIcOG7R-AIJcGt7_DxahHlwDNfVCQ5VNox14suwno7h817iNIFh1vSwU_mq7q_xXGWV3ZaMlJQTjIk9GwH2aAR7_hBdVPJfRRwoYwkKVsZuLv7meCOoENxe6C1xPID3hhF2Ws19WsmsFMiClMv2qENt1g0fE6AiV5lsR0de3EbooUd5S_cFZasPj0vFWbO36bffbgFI3f" />
+                <img alt="Nova Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={movieAppImg} />
               </div>
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">React</span>
-                  <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">Node.js</span>
-                </div>
-                <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
-                  <span className="material-symbols-outlined text-[14px]">group</span> Group Project
-                </div>
-                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">NOVA PROTOCOL</h3>
-                <p className="text-on-surface-variant text-sm mb-6">
-                  Decentralized identity verification built on StarkNet. A zero-knowledge approach to seamless, privacy-preserving authentication.
-                </p>
-                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
-                  Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Project 6 */}
-          <div className="group h-full">
-            <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(109,221,255,0.08)]">
-              <div className="aspect-[4/3] relative overflow-hidden shrink-0">
-                <img alt="Quantum Yield" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBju31Z5LcuU7XcOEhlfa9Qp2ai3ejcB998ox7fgaj0yK2lHXUas6sPr2RbGUldR798u10ETu_xhzRL9cI1wwlGCXErYEuPVuCjvFmuVDIiGC6pwj9EZqSbP33Yb_kdlnDgrje9Gp7GVoYV0mE3dV_7xL_Vu9RLbdxpZWRCGVIjxKjKTLjyfw9zO-sL8iEyaZreSqo3m1DOcRljJo-ldzxMlsUbbFrKwqSrBX-vLF6h4pLniD5_Jf9Dt2cJ03R5A03e1p0Pg3MOsObL" />
-              </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Python</span>
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-label font-bold uppercase">Pandas</span>
+                  <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">HTML</span>
+                  <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-label font-bold uppercase">CSS</span>
                 </div>
                 <div className="flex items-center gap-1.5 mb-2 text-on-surface-variant/70 text-[10px] font-black tracking-widest uppercase">
                   <span className="material-symbols-outlined text-[14px]">person</span> Personal Project
                 </div>
-                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">QUANTUM YIELD</h3>
+                <h3 className="text-2xl font-black font-headline tracking-tight mb-3">MOVIE RECOMMENDATION SITE</h3>
                 <p className="text-on-surface-variant text-sm mb-6">
-                  Algorithmic trading strategy analysis platform, leveraging historical on-chain data and generative modeling.
+                  A visually engaging movie recommendation website, showcasing responsive design, creative UI/UX, and clean layout techniques.
                 </p>
-                <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
+                <a href="https://github.com/LoshiniWelonika/Movie-Recommendation-Site" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-secondary font-bold group/link relative z-10 transition-colors">
                   Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
