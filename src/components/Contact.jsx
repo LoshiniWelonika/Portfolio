@@ -1,4 +1,42 @@
+import { useState } from 'react';
+
 export default function Contact() {
+  const [status, setStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus('');
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/loshinikedapanawala@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: e.target.name.value,
+          email: e.target.email.value,
+          message: e.target.message.value,
+          _subject: "New Message from Portfolio Website"
+        })
+      });
+      
+      if (response.ok) {
+          setStatus("Success! Your message has been sent.");
+          e.target.reset();
+      } else {
+          setStatus("Oops! Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setStatus("Oops! An error occurred. Please try again.");
+    }
+    
+    setIsSubmitting(false);
+  };
+
   return (
     <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
@@ -10,40 +48,43 @@ export default function Contact() {
               Let's build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">future</span>.
             </h2>
             <p className="text-on-surface-variant text-lg max-w-md leading-relaxed">
-              Currently available for select architectural challenges. Reach out to discuss technical consulting, full-stack development, or protocol design.
-            </p>
+              Bridging ideas with code. Reach out to collaborate, innovate, or build something impactful together.            </p>
           </div>
 
           {/* Social Links Grid */}
           <div className="grid grid-cols-1 gap-4">
-            <a href="#" className="glass-panel ghost-border p-6 rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-all duration-300">
+            <a href="mailto:loshinikedapanawala@gmail.com" className="glass-panel ghost-border p-6 rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-all duration-300">
               <div className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>alternate_email</span>
                 <div>
                   <p className="text-xs font-label uppercase tracking-widest text-on-surface-variant">Email</p>
-                  <p className="font-headline font-medium">hello@ethereal.engineer</p>
+                  <p className="font-headline font-medium">loshinikedapanawala@gmail.com</p>
                 </div>
               </div>
               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">north_east</span>
             </a>
 
-            <a href="#" className="glass-panel ghost-border p-6 rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-all duration-300">
+            <a href="https://github.com/LoshiniWelonika" target="_blank" rel="noopener noreferrer" className="glass-panel ghost-border p-6 rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-all duration-300">
               <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>terminal</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
                 <div>
                   <p className="text-xs font-label uppercase tracking-widest text-on-surface-variant">GitHub</p>
-                  <p className="font-headline font-medium">github.com/ethereal-eng</p>
+                  <p className="font-headline font-medium">github.com/LoshiniWelonika</p>
                 </div>
               </div>
               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">north_east</span>
             </a>
 
-            <a href="#" className="glass-panel ghost-border p-6 rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-all duration-300">
+            <a href="https://www.linkedin.com/in/loshini-kadapanawala-013281309" target="_blank" rel="noopener noreferrer" className="glass-panel ghost-border p-6 rounded-lg flex items-center justify-between group hover:bg-surface-container-high transition-all duration-300">
               <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>account_tree</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
                 <div>
                   <p className="text-xs font-label uppercase tracking-widest text-on-surface-variant">LinkedIn</p>
-                  <p className="font-headline font-medium">linkedin.com/in/eth-engineer</p>
+                  <p className="font-headline font-medium">Loshini Kadapanawala</p>
                 </div>
               </div>
               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">north_east</span>
@@ -57,27 +98,33 @@ export default function Contact() {
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
 
           <div className="glass-panel ghost-border rounded-lg p-8 md:p-12 relative z-10 shadow-[0_0_48px_rgba(109,221,255,0.05)]">
-            <form className="space-y-8" onSubmit={e => e.preventDefault()}>
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2 group">
                   <label htmlFor="name" className="font-label text-xs uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Name</label>
-                  <input type="text" id="name" placeholder="John Doe" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" />
+                  <input type="text" id="name" name="name" placeholder="John Doe" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" required />
                 </div>
                 <div className="space-y-2 group">
                   <label htmlFor="email" className="font-label text-xs uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Email</label>
-                  <input type="email" id="email" placeholder="john@example.com" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" />
+                  <input type="email" id="email" name="email" placeholder="john@example.com" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" required />
                 </div>
               </div>
 
               <div className="space-y-2 group">
                 <label htmlFor="message" className="font-label text-xs uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Message</label>
-                <textarea id="message" rows="5" placeholder="Describe your vision..." className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none resize-none"></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Describe your vision..." className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none resize-none" required></textarea>
               </div>
+              
+              {status && (
+                <div className={`p-4 rounded-lg font-headline font-bold text-sm ${status.includes('Success') ? 'bg-primary/20 text-primary' : 'bg-red-500/20 text-red-500'}`}>
+                  {status}
+                </div>
+              )}
 
               <div className="pt-4">
-                <button type="submit" className="w-full py-5 px-8 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-headline font-bold text-lg tracking-tight hover:shadow-[0_0_24px_rgba(109,221,255,0.4)] transition-all active:scale-95 flex items-center justify-center gap-3">
-                  <span>Send Message</span>
-                  <span className="material-symbols-outlined text-xl">send</span>
+                <button type="submit" disabled={isSubmitting} className="w-full py-5 px-8 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-headline font-bold text-lg tracking-tight hover:shadow-[0_0_24px_rgba(109,221,255,0.4)] transition-all active:scale-95 flex items-center justify-center gap-3 disabled:opacity-70 disabled:pointer-events-none">
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                  {!isSubmitting && <span className="material-symbols-outlined text-xl">send</span>}
                 </button>
               </div>
             </form>
