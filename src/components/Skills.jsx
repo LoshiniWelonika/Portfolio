@@ -125,11 +125,11 @@ export default function Skills() {
             <span className="material-symbols-outlined text-primary text-3xl mb-8 relative z-10" style={{ fontVariationSettings: "'FILL' 1" }}>magic_button</span>
 
             <h3 className="font-headline text-3xl md:text-5xl font-medium text-on-surface leading-tight max-w-4xl mb-8 relative z-10 italic tracking-tight">
-               "True engineering is the convergence <br className="hidden md:block" /> of performance and elegance."
+               "The only way to learn a new programming language  <br className="hidden md:block" /> is to write programmes in it."
             </h3>
 
             <div className="font-label text-sm uppercase tracking-[0.4em] font-bold text-on-surface-variant/60 relative z-10">
-               Digital Systems Architect &middot; 2024
+               Dennis Ritchie &middot;  Creator of the C language
             </div>
          </div>
       </section>

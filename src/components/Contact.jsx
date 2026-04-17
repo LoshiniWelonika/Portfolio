@@ -1,42 +1,4 @@
-import { useState } from 'react';
-
 export default function Contact() {
-  const [status, setStatus] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setStatus('');
-    
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/loshinikedapanawala@gmail.com", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: e.target.name.value,
-          email: e.target.email.value,
-          message: e.target.message.value,
-          _subject: "New Message from Portfolio Website"
-        })
-      });
-      
-      if (response.ok) {
-          setStatus("Success! Your message has been sent.");
-          e.target.reset();
-      } else {
-          setStatus("Oops! Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      setStatus("Oops! An error occurred. Please try again.");
-    }
-    
-    setIsSubmitting(false);
-  };
-
   return (
     <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
@@ -98,33 +60,27 @@ export default function Contact() {
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
 
           <div className="glass-panel ghost-border rounded-lg p-8 md:p-12 relative z-10 shadow-[0_0_48px_rgba(109,221,255,0.05)]">
-            <form className="space-y-8" onSubmit={handleSubmit}>
+            <form className="space-y-8" onSubmit={e => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2 group">
                   <label htmlFor="name" className="font-label text-xs uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Name</label>
-                  <input type="text" id="name" name="name" placeholder="John Doe" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" required />
+                  <input type="text" id="name" placeholder="John Doe" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" />
                 </div>
                 <div className="space-y-2 group">
                   <label htmlFor="email" className="font-label text-xs uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Email</label>
-                  <input type="email" id="email" name="email" placeholder="john@example.com" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" required />
+                  <input type="email" id="email" placeholder="john@example.com" className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none" />
                 </div>
               </div>
 
               <div className="space-y-2 group">
                 <label htmlFor="message" className="font-label text-xs uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Describe your vision..." className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none resize-none" required></textarea>
+                <textarea id="message" rows="5" placeholder="Describe your vision..." className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary transition-all outline-none resize-none"></textarea>
               </div>
-              
-              {status && (
-                <div className={`p-4 rounded-lg font-headline font-bold text-sm ${status.includes('Success') ? 'bg-primary/20 text-primary' : 'bg-red-500/20 text-red-500'}`}>
-                  {status}
-                </div>
-              )}
 
               <div className="pt-4">
-                <button type="submit" disabled={isSubmitting} className="w-full py-5 px-8 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-headline font-bold text-lg tracking-tight hover:shadow-[0_0_24px_rgba(109,221,255,0.4)] transition-all active:scale-95 flex items-center justify-center gap-3 disabled:opacity-70 disabled:pointer-events-none">
-                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                  {!isSubmitting && <span className="material-symbols-outlined text-xl">send</span>}
+                <button type="submit" className="w-full py-5 px-8 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-headline font-bold text-lg tracking-tight hover:shadow-[0_0_24px_rgba(109,221,255,0.4)] transition-all active:scale-95 flex items-center justify-center gap-3">
+                  <span>Send Message</span>
+                  <span className="material-symbols-outlined text-xl">send</span>
                 </button>
               </div>
             </form>
