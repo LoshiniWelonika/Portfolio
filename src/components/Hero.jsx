@@ -11,7 +11,8 @@ export default function Hero() {
         {/* Left Content */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex-1 flex flex-col items-start text-left z-10"
         >
@@ -53,7 +54,8 @@ export default function Hero() {
         {/* Right Content - Image */}
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="relative w-full max-w-[420px] aspect-square flex items-center justify-center md:mr-4"
         >

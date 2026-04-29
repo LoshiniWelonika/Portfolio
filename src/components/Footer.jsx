@@ -5,7 +5,7 @@ export default function Footer() {
     <motion.footer 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10px" }}
+      viewport={{ once: false, margin: "-10px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="w-full border-t border-surface-container bg-surface-container-low/60 flex justify-center items-center px-12 py-12 mt-12 text-center"
     >

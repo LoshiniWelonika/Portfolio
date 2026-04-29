@@ -90,7 +90,7 @@ export default function Skills() {
          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: false, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="space-y-6 mb-16 relative flex flex-col items-center text-center"
          >
@@ -113,7 +113,7 @@ export default function Skills() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: false, margin: "-50px" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
          >
             {skillCategories.map((category, idx) => (

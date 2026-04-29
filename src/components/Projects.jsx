@@ -40,7 +40,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: false, margin: "-50px" }}
           className="flex flex-wrap justify-center gap-8 lg:gap-12 items-stretch"
         >
 
