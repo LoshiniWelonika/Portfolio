@@ -1,4 +1,5 @@
 import heroImg from '../assets/hero.png';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
@@ -8,7 +9,12 @@ export default function Hero() {
       <div className="max-w-[1200px] w-full glass-card p-12 md:p-20 rounded-[48px] mx-auto shadow-[0_0_64px_rgba(109,221,255,0.02)] border border-outline-variant/20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
 
         {/* Left Content */}
-        <div className="flex-1 flex flex-col items-start text-left z-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex-1 flex flex-col items-start text-left z-10"
+        >
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-8 mt-4 md:mt-0">
             <span className="text-primary text-xs font-label uppercase tracking-[0.2em] font-bold">
               Available for new job positions
@@ -42,10 +48,15 @@ export default function Hero() {
               Contact Me
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Content - Image */}
-        <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center md:mr-4">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="relative w-full max-w-[420px] aspect-square flex items-center justify-center md:mr-4"
+        >
           {/* Circular Rings Background */}
           <div className="absolute inset-0 rounded-full border border-primary/20 scale-100 shadow-[0_0_80px_rgba(109,221,255,0.05)] w-[110%] h-[110%] left-[-5%] top-[-5%]"></div>
           <div className="absolute inset-0 rounded-full border border-secondary/20 scale-[1.25] w-[110%] h-[110%] left-[-5%] top-[-5%]"></div>
@@ -60,7 +71,7 @@ export default function Hero() {
             {/* Very faint inner gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

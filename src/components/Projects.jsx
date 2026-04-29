@@ -3,14 +3,29 @@ import parkingImg from '../assets/parkingSys.png';
 import truthlabImg from '../assets/truthlab.png';
 import bookSearchImg from '../assets/bookSearch.jpg';
 import movieAppImg from '../assets/movie.png';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
   return (
     <section id="projects" className="relative pt-24 pb-24 overflow-hidden">
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="max-w-7xl mx-auto px-6 mb-20 text-center"
+      >
         <span className="text-sm uppercase tracking-[0.2em] text-primary font-label font-bold mb-4 block">Projects Archive</span>
         <h2 className="text-6xl md:text-7xl font-black font-headline tracking-tighter mb-6 bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">
           DIGITAL<br />CRAFTSMANSHIP
@@ -18,13 +33,19 @@ export default function Projects() {
         <p className="max-w-2xl mx-auto text-on-surface-variant text-lg leading-relaxed">
           A collection of projects built through experimentation, iteration, and continuous learning—bridging theory with practical development.
         </p>
-      </div>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-12 items-stretch">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="flex flex-wrap justify-center gap-8 lg:gap-12 items-stretch"
+        >
 
           {/* Project 1 */}
-          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
+          <motion.div variants={itemVariants} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(109,221,255,0.12)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                 <img alt="Sentinel Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={donationImg} />
@@ -48,10 +69,10 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 2 */}
-          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
+          <motion.div variants={itemVariants} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(96,165,250,0.12)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                 <img alt="Prism DEX" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={parkingImg} />
@@ -73,10 +94,10 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 3 */}
-          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
+          <motion.div variants={itemVariants} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(109,221,255,0.08)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                 <img alt="Aether Bridge" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={truthlabImg} />
@@ -99,10 +120,10 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 4 */}
-          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
+          <motion.div variants={itemVariants} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,231,146,0.08)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                 <img alt="Fractal Engine" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={bookSearchImg} />
@@ -123,10 +144,10 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 5 */}
-          <div className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
+          <motion.div variants={itemVariants} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] h-full">
             <div className="glass-card rounded-lg overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(221,139,251,0.08)]">
               <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                 <img alt="Nova Protocol" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={movieAppImg} />
@@ -148,8 +169,8 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

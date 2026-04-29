@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -41,7 +42,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl rounded-full border border-outline-variant bg-surface-container/80 backdrop-blur-xl shadow-[0_0_48px_rgba(109,221,255,0.08)] flex justify-between items-center px-8 py-3 z-50 transition-all duration-300">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl rounded-full border border-outline-variant bg-surface-container/80 backdrop-blur-xl shadow-[0_0_48px_rgba(109,221,255,0.08)] flex justify-between items-center px-8 py-3 z-50 transition-all duration-300">
       <div className="text-xl font-black tracking-tighter text-primary font-headline z-10">L0SHINI_WELONIKA</div>
 
       <div className="hidden md:flex items-center gap-8 font-headline font-bold text-[15px] tracking-tight absolute left-1/2 -translate-x-1/2">
@@ -72,6 +77,6 @@ export default function Navbar() {
           </svg>
         </a>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

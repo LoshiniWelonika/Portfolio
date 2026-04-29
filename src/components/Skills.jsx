@@ -5,6 +5,7 @@ import {
    SiFlask, SiSpringboot
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Skills() {
    const skillCategories = [
@@ -71,9 +72,28 @@ export default function Skills() {
       }
    ];
 
+   const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+         opacity: 1,
+         transition: { staggerChildren: 0.15 }
+      }
+   };
+
+   const itemVariants = {
+      hidden: { opacity: 0, y: 30 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+   };
+
    return (
       <section id="skills" className="py-24 px-6 md:px-12 max-w-[1200px] mx-auto w-full">
-         <div className="space-y-6 mb-16 relative flex flex-col items-center text-center">
+         <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-6 mb-16 relative flex flex-col items-center text-center"
+         >
             <span className="font-label text-outline uppercase tracking-[0.2em] text-sm font-semibold">Technical Skills</span>
             <h2 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
                <span className="text-on-surface block">LEARNING. BUILDING</span>
@@ -87,11 +107,17 @@ export default function Skills() {
             <div className="absolute right-4 md:right-12 top-4 w-24 h-24 rounded-full border border-outline-variant/30 hidden md:flex items-center justify-center opacity-40">
                <span className="material-symbols-outlined text-4xl text-outline-variant">explore</span>
             </div>
-         </div>
+         </motion.div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+         <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
+         >
             {skillCategories.map((category, idx) => (
-               <div key={idx} className="glass-card p-10 rounded-[40px] flex flex-col gap-8 shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#17171e]/60 border border-outline-variant/10 hover:bg-[#1a1a24]/80 transition-colors">
+               <motion.div variants={itemVariants} key={idx} className="glass-card p-10 rounded-[40px] flex flex-col gap-8 shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#17171e]/60 border border-outline-variant/10 hover:bg-[#1a1a24]/80 transition-colors">
                   <div className="flex items-center gap-3">
                      <span className={`material-symbols-outlined text-2xl ${category.color}`} style={{ fontVariationSettings: "'FILL' 1" }}>{category.icon}</span>
                      <h3 className="text-2xl font-headline font-semibold text-on-surface">{category.title}</h3>
@@ -111,12 +137,18 @@ export default function Skills() {
                         </div>
                      ))}
                   </div>
-               </div>
+               </motion.div>
             ))}
-         </div>
+         </motion.div>
 
          {/* Quote Banner */}
-         <div className="relative overflow-hidden rounded-[40px] p-16 md:p-24 flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#14141a] border border-outline-variant/10 mt-12">
+         <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-[40px] p-16 md:p-24 flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(0,0,0,0.2)] bg-[#14141a] border border-outline-variant/10 mt-12"
+         >
             {/* Deep ambient background gradients */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-background to-secondary/10 opacity-60 z-0"></div>
             <div className="absolute top-0 left-[-10%] w-[50%] h-[150%] bg-primary/20 blur-[120px] rounded-full pointer-events-none z-0"></div>
@@ -131,7 +163,7 @@ export default function Skills() {
             <div className="font-label text-sm uppercase tracking-[0.4em] font-bold text-on-surface-variant/60 relative z-10">
                Dennis Ritchie &middot;  Creator of the C language
             </div>
-         </div>
+         </motion.div>
       </section>
    );
 }

@@ -1,9 +1,17 @@
+import { motion } from 'framer-motion';
+
 export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
         {/* Information Column */}
-        <div className="lg:col-span-5 space-y-12">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="lg:col-span-5 space-y-12"
+        >
           <div className="space-y-6">
             <span className="font-label text-primary uppercase tracking-[0.2em] text-xs font-bold">Initiate Connection</span>
             <h2 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none">
@@ -52,10 +60,16 @@ export default function Contact() {
               <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">north_east</span>
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Contact Form Column */}
-        <div className="lg:col-span-7 relative">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="lg:col-span-7 relative"
+        >
           {/* Ambient Glow Background */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -91,7 +105,7 @@ export default function Contact() {
               <div className="h-px bg-outline-variant/30 flex-grow"></div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
