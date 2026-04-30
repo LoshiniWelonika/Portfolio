@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="max-w-[1200px] w-full glass-card p-12 md:p-20 rounded-[48px] mx-auto shadow-[0_0_64px_rgba(109,221,255,0.02)] border border-outline-variant/20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
 
         {/* Left Content */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, margin: "-50px" }}
@@ -23,27 +23,51 @@ export default function Hero() {
           </div>
 
           <h1 className="font-headline text-6xl md:text-[88px] font-black tracking-[-0.03em] leading-[0.95] mb-6">
-            <span className="text-on-surface block">LOSHINI</span>
-            <span className="text-primary block">WELONIKA</span>
+            <span className="block overflow-hidden pb-1">
+              <motion.span 
+                 initial={{ y: "100%" }}
+                 whileInView={{ y: 0 }}
+                 viewport={{ once: false }}
+                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                 className="text-on-surface block"
+              >LOSHINI</motion.span>
+            </span>
+            <span className="block overflow-hidden py-1">
+              <motion.span 
+                 initial={{ y: "100%" }}
+                 whileInView={{ y: 0 }}
+                 viewport={{ once: false }}
+                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+                 className="text-primary block"
+              >WELONIKA</motion.span>
+            </span>
           </h1>
 
-          <h2 className="font-headline text-2xl items-center md:text-[28px] text-on-surface-variant mb-8 font-medium">
-            Full Stack Developer Intern/ <br></br> SE Intern
-          </h2>
+          <div className="overflow-hidden mb-8">
+            <motion.h2 
+              initial={{ y: "120%", opacity: 0, rotateX: -30 }}
+              whileInView={{ y: 0, opacity: 1, rotateX: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
+              className="font-headline text-2xl items-center md:text-[28px] text-on-surface-variant font-medium origin-bottom py-1"
+            >
+              Software Engineering Intern
+            </motion.h2>
+          </div>
 
           <p className="text-on-surface-variant/80 text-base md:text-lg max-w-lg mb-10 leading-[1.8] font-body">
             Crafting digital experiences where learning meets innovation. Blending logic with creativity to build efficient, scalable solutions with a passion for clean code and seamless user experiences.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 items-center mt-auto mb-4">
-            <button 
+            <button
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3.5 rounded-full bg-primary text-on-primary font-headline font-bold text-[15px] tracking-wide hover:shadow-[0_0_24px_rgba(109,221,255,0.4)] transition-all flex items-center justify-center gap-2 min-w-[180px]">
               View Projects
               <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
             </button>
 
-            <button 
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3.5 rounded-full bg-surface-variant/40 border border-outline-variant/30 text-on-surface font-headline font-bold text-[15px] hover:bg-surface-variant transition-all min-w-[180px]">
               Contact Me
@@ -52,7 +76,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Right Content - Image */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, margin: "-50px" }}
