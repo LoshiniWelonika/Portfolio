@@ -19,7 +19,7 @@ export default function Projects() {
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -36,7 +36,7 @@ export default function Projects() {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -115,7 +115,7 @@ export default function Projects() {
                 <p className="text-on-surface-variant text-sm mb-6">
                   TRUTHLAB is an AI-powered system that detects fake news in real time by analyzing content and verifying credibility using NLP and machine learning.
                 </p>
-                <a href="https://github.com/SE5104-Mini-Project-Group-08/TruthLab" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
+                <a href="https://github.com/LoshiniWelonika/AI_Fake_News_Detector" target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 text-primary font-bold group/link relative z-10 transition-colors">
                   Github Repo <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
               </div>

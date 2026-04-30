@@ -60,12 +60,14 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 items-center mt-auto mb-4">
-            <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            <a
+              href="/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-primary text-on-primary font-headline font-bold text-[15px] tracking-wide hover:shadow-[0_0_24px_rgba(109,221,255,0.4)] transition-all flex items-center justify-center gap-2 min-w-[180px]">
-              View Projects
-              <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-            </button>
+              View CV
+              <span className="material-symbols-outlined text-[20px]">open_in_new</span>
+            </a>
 
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
