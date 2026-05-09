@@ -1,7 +1,7 @@
 import donationImg from '../assets/bloodDonation.png';
 import parkingImg from '../assets/parkingSys.png';
 import truthlabImg from '../assets/truthlab.png';
-import bookSearchImg from '../assets/bookSearch.jpg';
+import bookSearchImg from '../assets/BookSearch.jpg';
 import movieAppImg from '../assets/movie.png';
 import { motion } from 'framer-motion';
 
